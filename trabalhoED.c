@@ -33,11 +33,10 @@ void imprimeListaDecresc(Lista* lista);
 int main() {
     SetConsoleOutputCP(CP_UTF8);
 
-    FILE *arquivo;
     char linha[200];
     int len;
 
-    arquivo = fopen("file example - ed" , "r");
+    FILE *arquivo = fopen("file example - ed", "r");
 
     if (arquivo == NULL) {
         perror("Erro ao abrir o arquivo");
@@ -78,6 +77,9 @@ int main() {
                 break;
             case 3:
                 deleteLista(lista);
+                break;
+            default:
+                printf("Opcao invalida\n");
                 break;
         }
     }
