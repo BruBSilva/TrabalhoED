@@ -2,9 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <windows.h>
 
 typedef struct Pessoa {
-    char nome[150];
+    char nome[61];
     char sexo;
     double salario;
 }Pessoa;
@@ -30,6 +31,7 @@ void imprimeListaCresc(Lista* lista);
 void imprimeListaDecresc(Lista* lista);
 
 int main() {
+    SetConsoleOutputCP(CP_UTF8);
 
     FILE *arquivo;
     char linha[200];
