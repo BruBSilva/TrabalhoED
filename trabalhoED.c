@@ -112,7 +112,8 @@ Pessoa* createPessoa(char* linha, int len) {
     sscanf(linha + len - 9, "%lf", &novaPessoa->salario);
     novaPessoa->sexo = linha[len-10];
 
-    int i = strlen(novaPessoa->nome);
+    //int i = strlen(novaPessoa->nome);
+    int i = 60;
     while(i > 0 && isspace(linha[i])){
         i--;
     }
@@ -157,15 +158,15 @@ void insert(Pessoa* pessoa, Lista* lista){
         currentNode = currentNode->next;
     }
 
-    if (previousNode == NULL) {  // Inserção no início
+    if (previousNode == NULL) {
         newNode->next = currentNode;
         currentNode->prev = newNode;
         lista->head = newNode;
-    } else if (currentNode == NULL) {  // Inserção no final
+    } else if (currentNode == NULL) {
         previousNode->next = newNode;
         newNode->prev = previousNode;
         lista->tail = newNode;
-    } else {  // Inserção no meio
+    } else {
         previousNode->next = newNode;
         newNode->prev = previousNode;
         newNode->next = currentNode;
